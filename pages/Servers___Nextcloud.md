@@ -4,12 +4,6 @@
 	  apt install snapd
 	  snap install snapd
 	  snap install nextcloud
-	  
-	  snap set nextcloud ports.http=81
-	  snap set nextcloud ports.https=444
-	  snap set nextcloud php.memory-limit=1024M
-	  snap set nextcloud http.compression=true
-	  nextcloud.occ config:system:set session.cookie_secure --value="true"
 	  ```
 	- ```yaml
 	  http:
