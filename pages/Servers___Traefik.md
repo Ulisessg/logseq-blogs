@@ -1,6 +1,6 @@
 public:: true
 
-- ## Setup Reverse Proxy
+- ## Setup Traefik Reverse Proxy in Debian with Apparmor [[Servers/Reverse Proxy]]
 	- Create Unix user. This will no prompt you to set a password or allows you to login.
 	  logseq.order-list-type:: number
 		- logseq.order-list-type:: number
