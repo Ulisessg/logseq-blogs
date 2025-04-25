@@ -55,7 +55,7 @@
 		  logseq.order-list-type:: number
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
 		- This configuration ensures NExtcloud works with proper security, CalDav, CardDav and WebFinger are redirected properly.
-		- The Strict-Transport-Security header tells user browser must use only HTTPS requests
+		- The Strict-Transport-Security header tells user browser must use only HTTPS requests (including subdomains), the max age is a timeout for browser remembering this config.
 		- ```yaml
 		  http:
 		    middlewares:
