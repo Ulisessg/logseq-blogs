@@ -38,7 +38,7 @@
 		  logseq.order-list-type:: number
 		- Sets explicitly the domain used.
 		  logseq.order-list-type:: number
-		- Sets default phone region, if you live in
+		- Sets default phone region, if you live in different country you can use the [ISO_639-1 list](https://es.wikipedia.org/wiki/ISO_639-1) to change it.
 		  logseq.order-list-type:: number
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
 		- ```yaml
