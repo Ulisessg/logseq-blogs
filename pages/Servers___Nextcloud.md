@@ -20,9 +20,9 @@
 		  nextcloud.occ config:system:set default_language --value="en"
 		  nextcloud.occ config:system:set default_locale --value="es_MX"
 		  nextcloud.occ config:system:set trusted_proxies 0 --value="your.machine.ip.value"
-		  nextcloud.occ config:system:set trusted_proxies 0 --value=""
+		  nextcloud.occ config:system:set trusted_proxies 0 --value="127.0.0.1/32"
+		  nextcloud.occ config:system:set trusted_proxies 0 --value="::1/128"
 		  nextcloud.occ config:system:set overwrite.cli.url --value="https://subdomain.domain.com"
-		  
 		  ```
 		- Explanation:
 		- Changes default HTTP port, this is required because Traefik is handling por 80 requests, even if Nextcloud could handle requests in por 81, the firewall will block those request to force Traefik as unique requests handler.
@@ -44,6 +44,8 @@
 		- Sets default language.
 		  logseq.order-list-type:: number
 		- Change default locale.
+		  logseq.order-list-type:: number
+		- Tells snap could receieve request from your local machine who is using your local network ip
 		  logseq.order-list-type:: number
 		- logseq.order-list-type:: number
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
