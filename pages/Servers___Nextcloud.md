@@ -20,69 +20,59 @@
 		  logseq.order-list-type:: number
 		- Change HTTPS port, same reason as change port 80.
 		  logseq.order-list-type:: number
-		- Increase the allowed memory consumption if PHP, useful to faster and robust resources request. You can use as much as you want, also is useful if you have troubles with images not showing in frontend.
+		- Increase the allowed memory consumption if PHP, useful to faster and robust resources request. You can use as much as you want, also is useful if you have troubles with images not showing in fronted.
 		  logseq.order-list-type:: number
 		- Enables HTTP compression, send user compressed resources reducing network load.
 		  logseq.order-list-type:: number
 		- Use secure protocol to handle cookies.
 		  logseq.order-list-type:: number
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
-	- ```yaml
-	  http:
-	    middlewares:
-	      hsts-header:
-	        headers:
-	          customResponseHeaders:
-	            Strict-Transport-Security: "max-age=15552000; includeSubDomains; preload"
-	      nextcloud-caldav-redirect:
-	        redirectRegex:
-	          regex: "^https://subdomain.domain.com/.well-known/caldav"
-	          replacement: "https://subdomain.domain.com/remote.php/dav/"
-	          permanent: true
-	      nextcloud-carddav-redirect:
-	        redirectRegex:
-	          regex: "^https://subdomain.domain.com/.well-known/carddav"
-	          replacement: "https://subdomain.domain.com/remote.php/dav/"
-	          permanent: true
-	      nextcloud-webfinger-redirect:
-	        redirectRegex:
-	          regex: "^https://subdomain.domain.com/.well-known/webfinger"
-	          replacement: "https://subdomain.domain.com/index.php/.well-known/webfinger"
-	          permanent: true
-	      nextcloud-nodeinfo-redirect:
-	        redirectRegex:
-	          regex: "^https://subdomain.domain.com/.well-known/webfinger"
-	          replacement: "https://subdomain.domain.com/index.php/.well-known/nodeinfo"
-	          permanent: true
-	  
-	    routers:
-	      nextcloud:
-	        middlewares:
-	          - hsts-header
-	          - nextcloud-caldav-redirect
-	          - nextcloud-carddav-redirect
-	          - nextcloud-webfinger-redirect
-	          - nextcloud-nodeinfo-redirect
-	        rule: "Host(`subdomain.domain.com`)"
-	        service: nextcloud-service
-	        tls:
-	          certResolver: myresolver
-	        entryPoints:
-	          - websecure
-	          - web
-	    services:
-	      nextcloud-service:
-	        loadBalancer:
-	          servers:
-	            - url: "http://localhost:81"
-	  ```
-- ```sh
-   nextcloud.occ config:system:set overwriteprotocol --value="https"
-   nextcloud.occ config:system:set overwritehost --value="subdomain.domain.com"
-   nextcloud.occ config:system:set default_phone_region --value="MX"
-   nextcloud.occ config:system:set default_language --value="en"
-   nextcloud.occ config:system:set default_locale --value="es_MX"
-   nextcloud.occ config:system:set trusted_proxies 0 --value="your.machine.ip.value"
-   nextcloud.occ config:system:set overwrite.cli.url --value="https://subdomain.domain.com"
-  
-  ```
+		- ```yaml
+		  http:
+		    middlewares:
+		      hsts-header:
+		        headers:
+		          customResponseHeaders:
+		            Strict-Transport-Security: "max-age=15552000; includeSubDomains; preload"
+		      nextcloud-caldav-redirect:
+		        redirectRegex:
+		          regex: "^https://subdomain.domain.com/.well-known/caldav"
+		          replacement: "https://subdomain.domain.com/remote.php/dav/"
+		          permanent: true
+		      nextcloud-carddav-redirect:
+		        redirectRegex:
+		          regex: "^https://subdomain.domain.com/.well-known/carddav"
+		          replacement: "https://subdomain.domain.com/remote.php/dav/"
+		          permanent: true
+		      nextcloud-webfinger-redirect:
+		        redirectRegex:
+		          regex: "^https://subdomain.domain.com/.well-known/webfinger"
+		          replacement: "https://subdomain.domain.com/index.php/.well-known/webfinger"
+		          permanent: true
+		      nextcloud-nodeinfo-redirect:
+		        redirectRegex:
+		          regex: "^https://subdomain.domain.com/.well-known/webfinger"
+		          replacement: "https://subdomain.domain.com/index.php/.well-known/nodeinfo"
+		          permanent: true
+		  
+		    routers:
+		      nextcloud:
+		        middlewares:
+		          - hsts-header
+		          - nextcloud-caldav-redirect
+		          - nextcloud-carddav-redirect
+		          - nextcloud-webfinger-redirect
+		          - nextcloud-nodeinfo-redirect
+		        rule: "Host(`subdomain.domain.com`)"
+		        service: nextcloud-service
+		        tls:
+		          certResolver: myresolver
+		        entryPoints:
+		          - websecure
+		          - web
+		    services:
+		      nextcloud-service:
+		        loadBalancer:
+		          servers:
+		            - url: "http://localhost:81"
+		  ```
