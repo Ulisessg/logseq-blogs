@@ -45,9 +45,12 @@
 		  logseq.order-list-type:: number
 		- Change default locale.
 		  logseq.order-list-type:: number
-		- Tells snap could receieve request from your local machine who is using your local network ip
+		- Tells snap could get request from your local network who is using your local network ip
 		  logseq.order-list-type:: number
-		- logseq.order-list-type:: number
+		- Tells snap could get request from local machine using IPV4 ip
+		  logseq.order-list-type:: number
+		- Tells snap could get request from local machine usi
+		  logseq.order-list-type:: number
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
 		- ```yaml
 		  http:
