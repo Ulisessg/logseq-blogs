@@ -28,7 +28,7 @@ public:: true
 		- [How to setup LUKS encryption](https://www.youtube.com/watch?v=GEl2S5MI-WU)
 		- [LUKS Faq](https://gitlab.com/cryptsetup/cryptsetup/-/wikis/FrequentlyAskedQuestions)
 - ## After OS installation
-	- ### Verify all Debian sources use HTTPS protocol
+	- ### Verify all Debian sources use HTTPS protocol [[Servers/Hardening]]
 		- Even if debian packages have package intregity checks is a good idea to use encrypted comunications all the time
 		- https://www.debian.org/doc/manuals/securing-debian-manual/deb-pack-sign.en.html
 		- Open with sudo permissions `/etc/apt/sources.list` file and verify *URI* uses https protocol, if folder `/etc/apt/sources.list.d/` also have files do the same
@@ -36,7 +36,7 @@ public:: true
 		- ```sh
 		  sudo apt update && sudo apt upgrade
 		  ```
-	- ### Use SSH key to remote connection
+	- ### Use SSH key to remote connection [[Servers/Hardening]]
 		- Using a ssh key to remote login gives you an extra layer of security, if you use password login and someone stole your password that person will be able to access your server, but if you use ssh keys even if someone stole your password they will no be able to login into your account.
 		- Execute this command, replace the fake email with yours or leave it in blank
 			- ```sh
@@ -65,7 +65,7 @@ public:: true
 				  systemctl restart sshd
 				  ```
 		- https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-	- ### Use a firewall
+	- ### Use a firewall [[Servers/Hardening]]
 		- Check if you have installed "Uncomplicated Firewall" (ufw).
 			- ```sh
 			  ufw status numbered
@@ -84,7 +84,7 @@ public:: true
 			   sudo ufw allow 443
 			   sudo ufw enable
 			  ```
-	- ### Use Apparmor as security module
+	- ### Use AppArmor as security module [[Servers/Hardening]]
 		- I have two strong reasons to use Apparmor instead Selinux
 			- Is more easy to do maintenance and debug.
 			  logseq.order-list-type:: number
