@@ -1,4 +1,5 @@
 ## Jenkins installation and basic configuration
+	- This installation and configuration allows you to create Jenkins Workflow using Nodejs
 	- ### Install Jenkins https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
 		- ```bash
 		  wget -O /usr/share/keyrings/jenkins-keyring.asc \
@@ -48,11 +49,11 @@
 				  ```
 		- #### Install suggested plugins
 		- #### Create admin user
-		- Disallow the Build-In node setting number of executor to 0
+		- #### Disallow the Build-In node setting number of executor to 0
 			- In current Jenkins version this can be configured in `https://subdomain.domain.com/computer/(built-in)/configure`
 			- This is a good recommendation to avoid security risks
-		- [Install Nodejs plugin](https://plugins.jenkins.io/nodejs/)
-		- Create a new Jenkins Agent
+		- #### [Install Nodejs plugin](https://plugins.jenkins.io/nodejs/)
+		- #### Create a new Jenkins Agent
 			- This step applies if you want to make the agent in different machine or in same machine
 			- **THIS METHOD IS USING BARE METAL, IF YOU ARE USING DOCKER REFER TO OFFICIAL DOCS TO MORE INFO**
 			- Create a new user to serve as agent node
