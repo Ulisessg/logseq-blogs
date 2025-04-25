@@ -20,8 +20,8 @@
 		  nextcloud.occ config:system:set default_language --value="en"
 		  nextcloud.occ config:system:set default_locale --value="es_MX"
 		  nextcloud.occ config:system:set trusted_proxies 0 --value="your.machine.ip.value"
-		  nextcloud.occ config:system:set trusted_proxies 0 --value="127.0.0.1/32"
-		  nextcloud.occ config:system:set trusted_proxies 0 --value="::1/128"
+		  nextcloud.occ config:system:set trusted_proxies 1 --value="127.0.0.1/32"
+		  nextcloud.occ config:system:set trusted_proxies 2 --value="::1/128"
 		  nextcloud.occ config:system:set overwrite.cli.url --value="https://subdomain.domain.com"
 		  ```
 		- Explanation:
@@ -56,6 +56,8 @@
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
 		- This configuration ensures NExtcloud works with proper security, CalDav, CardDav and WebFinger are redirected properly.
 		- The Strict-Transport-Security header tells user browser must use only HTTPS requests (including subdomains), the max age is a timeout for browser remembering this config.
+			- https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security
+		-
 		- ```yaml
 		  http:
 		    middlewares:
