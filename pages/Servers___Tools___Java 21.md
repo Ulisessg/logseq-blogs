@@ -1,4 +1,5 @@
 ## Install Java 21 runtime environment
+	- By default Debian use an stable and old version of Java in their repository
 	- https://adoptium.net/installation/linux/
 	- ### Use Adoptium packages
 		- ```bash
@@ -9,29 +10,3 @@
 		  apt install temurin-21-jre
 		  java --version
 		  ```
-	- Install jenkins
-		- ```bash
-		  wget -O /usr/share/keyrings/jenkins-keyring.asc \
-		    https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
-		  echo "deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc]" \
-		    https://pkg.jenkins.io/debian-stable binary/ | tee \
-		    /etc/apt/sources.list.d/jenkins.list > /dev/null
-		  apt-get update
-		  apt-get install jenkins
-		  ```
-	- Change Jenkins port (optional)
-		- ```bash
-		  systemctl edit jenkins.service
-		  ```
-		- ```service
-		  [Service]
-		  Environment="JENKINS_PORT=8081"
-		  ```
-		- ```bash
-		  systemctl stop jenkins && systemctl start jenkins
-		  ```
-	- Add Jenkins to Traefik dynamic file
-		- ```bash
-		  nano /etc/traefik/dynamic.yaml
-		  ```
-			-
