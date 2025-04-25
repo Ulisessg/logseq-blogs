@@ -1,4 +1,4 @@
-## Jenkins installation and basic configuration
+## Jenkins installation and basic configuration [[Servers/Services]]
 	- This installation and configuration allows you to create Jenkins Workflow using Nodejs
 	- ### Install Jenkins https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
 		- ```bash
