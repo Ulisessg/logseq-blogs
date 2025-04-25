@@ -1,4 +1,6 @@
-## Install Nextcloud [[Servers/Services]]
+public:: true
+
+- ## Install Nextcloud [[Servers/Services]]
 	- Even if snaps are controversial, as system admin I don't like to manage so much things and Nextcloud tends to be hard to maintain, snaps provide automatic updates and all dependencies are installed in isolated environment (such as Docker) so installed dependencies are never affected and could have newer or older versions.
 	- ### Install Snap daemon
 		- ```sh
