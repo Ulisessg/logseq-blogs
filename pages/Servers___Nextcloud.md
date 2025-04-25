@@ -20,6 +20,7 @@
 		  nextcloud.occ config:system:set default_language --value="en"
 		  nextcloud.occ config:system:set default_locale --value="es_MX"
 		  nextcloud.occ config:system:set trusted_proxies 0 --value="your.machine.ip.value"
+		  nextcloud.occ config:system:set trusted_proxies 0 --value=""
 		  nextcloud.occ config:system:set overwrite.cli.url --value="https://subdomain.domain.com"
 		  
 		  ```
