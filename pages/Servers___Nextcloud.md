@@ -16,7 +16,7 @@
 		  nextcloud.occ config:system:set session.cookie_secure --value="true"
 		  ```
 		- Explanation:
-		- Changes default http port, this is requiresd because traefik is handling
+		- Changes default http port, this is required because Traefik is handling por 80 requests, even if Nextcloud could handle requests in por 81, the firewall will block those request to foce traefik as unique requests handler
 		  logseq.order-list-type:: number
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
 	- ```yaml
