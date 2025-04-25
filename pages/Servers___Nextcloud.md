@@ -49,7 +49,9 @@
 		  logseq.order-list-type:: number
 		- Tells snap could get request from local machine using IPV4 ip
 		  logseq.order-list-type:: number
-		- Tells snap could get request from local machine usi
+		- Tells snap could get request from local machine using IPV6 ip
+		  logseq.order-list-type:: number
+		- Sets client the URL, more useful if you have Nextcloud and your reverse proxy in different domains.
 		  logseq.order-list-type:: number
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
 		- ```yaml
