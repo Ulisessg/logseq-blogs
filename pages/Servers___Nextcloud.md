@@ -54,7 +54,7 @@
 		- Sets client the URL, more useful if you have Nextcloud and your reverse proxy in different domains.
 		  logseq.order-list-type:: number
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
-		- This configuration
+		- This configuration ensures NExtcloud works with proper security and CalDav
 		- ```yaml
 		  http:
 		    middlewares:
