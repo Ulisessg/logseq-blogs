@@ -24,13 +24,13 @@ public:: true
 -
 - ## During server OS installation
 	- ### Encrypt your hard drive [[Servers/Hardening]]
-		- Is so recommended when you install any OS encrypt your data to avoid being stole if someone access physically your hard drive. Debian (and any Linux distro) allow you to use Luks to encrypt data.
+		- Is so recommended when you install any OS encrypt your data to avoid being stole if someone access physically your hard drive. Debian (and any Linux distro) allow you to use LUKS to encrypt data.
 		- [What is LUKS](https://es.wikipedia.org/wiki/LUKS)
 		- [How to setup LUKS encryption](https://www.youtube.com/watch?v=GEl2S5MI-WU)
 		- [LUKS Faq](https://gitlab.com/cryptsetup/cryptsetup/-/wikis/FrequentlyAskedQuestions)
 - ## After OS installation
 	- ### Verify all Debian sources use HTTPS protocol [[Servers/Hardening]]
-		- Even if debian packages have package intregity checks is a good idea to use encrypted comunications all the time
+		- Even if Debian packages have package integrity checks is a good idea to use encrypted communications all the time
 		- https://www.debian.org/doc/manuals/securing-debian-manual/deb-pack-sign.en.html
 		- Open with sudo permissions `/etc/apt/sources.list` file and verify *URI* uses https protocol, if folder `/etc/apt/sources.list.d/` also have files do the same
 	- ### Upgrade all packages and their repos
