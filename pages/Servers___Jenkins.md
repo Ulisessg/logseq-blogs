@@ -9,7 +9,7 @@
 		  apt-get update
 		  apt-get install jenkins
 		  ```
-	- Change Jenkins port (optional)
+	- ### Change Jenkins port (optional)
 		- ```bash
 		  systemctl edit jenkins.service
 		  ```
@@ -20,7 +20,7 @@
 		- ```bash
 		  systemctl stop jenkins && systemctl start jenkins
 		  ```
-	- Add Jenkins to Traefik dynamic file
+	- ### Add Jenkins to Traefik dynamic file
 		- ```bash
 		  nano /etc/traefik/dynamic.yaml
 		  ```
@@ -40,14 +40,14 @@
 			          servers:
 			            - url: "http://127.0.0.1:8081"
 			  ```
-	- Configure Jenkins
-		- Unlock Jenkins
+	- ### Configure Jenkins
+		- #### Unlock Jenkins
 			- Copy the initial password from `/var/lib/jenkins/secrets/initialAdminPassword`
 				- ```bash
 				  cat /var/lib/jenkins/secrets/initialAdminPassword
 				  ```
-		- Install suggested plugins
-		- Create admin user
+		- #### Install suggested plugins
+		- #### Create admin user
 		- Disallow the Build-In node setting number of executor to 0
 			- In current Jenkins version this can be configured in `https://subdomain.domain.com/computer/(built-in)/configure`
 			- This is a good recommendation to avoid security risks
