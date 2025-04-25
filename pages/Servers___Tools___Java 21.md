@@ -1,5 +1,5 @@
 ## Install Java 21 runtime environment
-	- By default Debian use an stable and old version of Java in their repository
+	- By default Debian use an stable and old version of Java in their repository, so to ensure we use a open source and newer Java version will use the Adoptium repo.
 	- https://adoptium.net/installation/linux/
 	- ### Use Adoptium packages
 		- ```bash
