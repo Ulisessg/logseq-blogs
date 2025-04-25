@@ -1,0 +1,1 @@
+- Even if default installation of Linux distros is secure, you can improve security with some configurations, some

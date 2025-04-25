@@ -102,7 +102,7 @@ public:: true
 			- Apparmor utils gives you utils as aa-logprof to check which programs are requesting permission over a file or resource, the impact of give the permission or the ability to ignore it.
 			- Auditd is a dependence to aa-logprof to correct behavior
 	- https://wiki.debian.org/AppArmor/HowToUse
-	- ### Improve kernel security adding parameter to the kernel on boot
+	- ### Improve kernel security adding parameter to the kernel on boot [[Servers/Hardening]]
 		- You can modify Linux kernel behavior and do some vulnerabilities mitigation such as CPU attacks.
 		- As root or with sudo command open file `/etc/default/grub`
 		- Search the param "GRUB_CMDLINE_LINUX" and add
@@ -122,7 +122,7 @@ public:: true
 				  update-grub
 				  reboot
 				  ```
-	- ### Upgrade server firmware
+	- ### Upgrade server firmware [[Servers/Hardening]]
 		- You can upgrade the firmware of some device in Linux using fwupd tool. This tool also is useful to verify machine hardware security, as advice you **NEVER** will have all security checks, the best approach is have as many as you can. Also this is not a 100% reliable check, even if you have almost all checks you can be hacked from other vectors (like don't upgrade your software, weak passwords, insecure connections, etc).
 			- If you are using `secure boot` and I hope it, you must use a Machine Owner Key to sing the installed firmware.
 				- ```sh
