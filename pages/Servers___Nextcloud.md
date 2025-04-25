@@ -20,7 +20,9 @@
 		  logseq.order-list-type:: number
 		- Change HTPPS port, same reason as change port 80
 		  logseq.order-list-type:: number
-		- Increase the allowed memory consumption if PHP,
+		- Increase the allowed memory consumption if PHP, useful to faster and robust resources request. You can use as much as you want, also is useful if you have troubles with images not showing in frontend.
+		  logseq.order-list-type:: number
+		- Enables HTTP compression, send
 		  logseq.order-list-type:: number
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
 	- ```yaml
