@@ -16,13 +16,15 @@
 		  nextcloud.occ config:system:set session.cookie_secure --value="true"
 		  ```
 		- Explanation:
-		- Changes default http port, this is required because Traefik is handling por 80 requests, even if Nextcloud could handle requests in por 81, the firewall will block those request to force Traefik as unique requests handler.
+		- Changes default HTTP port, this is required because Traefik is handling por 80 requests, even if Nextcloud could handle requests in por 81, the firewall will block those request to force Traefik as unique requests handler.
 		  logseq.order-list-type:: number
-		- Change HTPPS port, same reason as change port 80
+		- Change HTTPS port, same reason as change port 80.
 		  logseq.order-list-type:: number
 		- Increase the allowed memory consumption if PHP, useful to faster and robust resources request. You can use as much as you want, also is useful if you have troubles with images not showing in frontend.
 		  logseq.order-list-type:: number
-		- Enables HTTP compression, send
+		- Enables HTTP compression, send user compressed resources reducing network load.
+		  logseq.order-list-type:: number
+		- Use secure protocol to handle cookies.
 		  logseq.order-list-type:: number
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
 	- ```yaml
