@@ -14,6 +14,14 @@
 		  snap set nextcloud php.memory-limit=1024M
 		  snap set nextcloud http.compression=true
 		  nextcloud.occ config:system:set session.cookie_secure --value="true"
+		  nextcloud.occ config:system:set overwriteprotocol --value="https"
+		  nextcloud.occ config:system:set overwritehost --value="subdomain.domain.com"
+		  nextcloud.occ config:system:set default_phone_region --value="MX"
+		  nextcloud.occ config:system:set default_language --value="en"
+		  nextcloud.occ config:system:set default_locale --value="es_MX"
+		  nextcloud.occ config:system:set trusted_proxies 0 --value="your.machine.ip.value"
+		  nextcloud.occ config:system:set overwrite.cli.url --value="https://subdomain.domain.com"
+		  
 		  ```
 		- Explanation:
 		- Changes default HTTP port, this is required because Traefik is handling por 80 requests, even if Nextcloud could handle requests in por 81, the firewall will block those request to force Traefik as unique requests handler.
@@ -25,6 +33,10 @@
 		- Enables HTTP compression, send user compressed resources reducing network load.
 		  logseq.order-list-type:: number
 		- Use secure protocol to handle cookies.
+		  logseq.order-list-type:: number
+		- Enforce HTTPS protocol usage, if request come from HTTP will be upgraded internally in snap
+		  logseq.order-list-type:: number
+		- Sets explicity the domain used
 		  logseq.order-list-type:: number
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
 		- ```yaml
