@@ -6,7 +6,17 @@
 		  snap install snapd
 		  snap install nextcloud
 		  ```
-		- In rare situations you will need
+		- In rare situations you will need to restart your server, most of the time no.
+	- ### Modify Nextcloud config
+		- ```sh
+		  snap set nextcloud ports.http=81
+		  snap set nextcloud ports.https=444
+		  snap set nextcloud php.memory-limit=1024M
+		  snap set nextcloud http.compression=true
+		  nextcloud.occ config:system:set session.cookie_secure --value="true"
+		  ```
+		-
+	- ### Add Nextcloud
 	- ```yaml
 	  http:
 	    middlewares:
