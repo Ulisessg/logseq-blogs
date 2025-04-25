@@ -36,7 +36,9 @@
 		  logseq.order-list-type:: number
 		- Enforce HTTPS protocol usage, if request come from HTTP will be upgraded internally in snap
 		  logseq.order-list-type:: number
-		- Sets explicity the domain used
+		- Sets explicitly the domain used.
+		  logseq.order-list-type:: number
+		- Sets default phone region
 		  logseq.order-list-type:: number
 	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
 		- ```yaml
