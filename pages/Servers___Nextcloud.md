@@ -15,8 +15,10 @@
 		  snap set nextcloud http.compression=true
 		  nextcloud.occ config:system:set session.cookie_secure --value="true"
 		  ```
-		-
-	- ### Add Nextcloud
+		- Explanation:
+		- Changes default http port, this is requiresd because traefik is handling
+		  logseq.order-list-type:: number
+	- ### Add Nextcloud to Traefik dynamic file [[Servers/Traefik]]
 	- ```yaml
 	  http:
 	    middlewares:
