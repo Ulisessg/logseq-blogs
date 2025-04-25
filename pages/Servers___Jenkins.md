@@ -1,5 +1,5 @@
 ## Jenkins installation and basic configuration
-	- Install jenkins
+	- ### Install Jenkins https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
 		- ```bash
 		  wget -O /usr/share/keyrings/jenkins-keyring.asc \
 		    https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key
