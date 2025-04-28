@@ -8,5 +8,22 @@
 	  sudo mkdir -p /etc/apt/keyrings
 	  sudo curl -o /etc/apt/keyrings/mariadb-keyring.pgp 'https://mariadb.org/mariadb_release_signing_key.pgp'
 	  ```
-	- ### Add Mariadb repo to sources
+	- ### Add Mariadb repo to sources `/etc/apt/sources.list.d/mariadb.sources`
+	- ```sh
+	  touch /etc/apt/sources.list.d/mariadb.sources
+	  ```
+	- ### Paste source
+	- ```source
+	  # MariaDB 11.8 repository list - created 2025-04-28 17:27 UTC
+	  # https://mariadb.org/download/
+	  X-Repolib-Name: MariaDB
+	  Types: deb
+	  # deb.mariadb.org is a dynamic mirror if your preferred mirror goes offline. See https://mariadb.org/mirrorbits/ for details.
+	  # URIs: https://deb.mariadb.org/11.rc/debian
+	  URIs: https://mirrors.accretive-networks.net/mariadb/repo/11.8/debian
+	  Suites: bookworm
+	  Components: main
+	  Signed-By: /etc/apt/keyrings/mariadb-keyring.pgp
+	  ```
+	- ### Install mariadb
 	-
