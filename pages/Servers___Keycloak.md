@@ -2,6 +2,22 @@
 - ### Installing keycloak
 - {{embed ((680be69d-c4f1-4a6d-883d-a9bd3e4e03d3))}}
 - {{embed ((680be6fa-1991-42aa-a9e9-e04da6b0b7f6))}}
+-
+- ### Create MariaDB user and database
+	- ```sh
+	  mysql -u root
+	  ```
+	- ```mysql
+	  -- Create a user with a password
+	  CREATE USER 'keycloak'@'%' IDENTIFIED BY 'ThestrongestPasswordInTheW0rldYeah';
+	  
+	  -- Create the database owned by the new user
+	  CREATE DATABASE keycloak CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+	  
+	  -- Grant all privileges on the database to the user
+	  GRANT ALL PRIVILEGES ON keycloak.* TO 'keycloak'@'%';
+	  
+	  ```
 - ### Create Keycloak UNIX user
 	- ```sh
 	  # Create keycloak UNIX user
