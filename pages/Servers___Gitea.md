@@ -99,17 +99,22 @@ public:: true
 		    include <abstractions/apache2-common>
 		    include <abstractions/base>
 		    include <abstractions/dbus-session-strict>
+		    include <abstractions/gio-open>
 		  
+		    /etc/mime.types r,
 		    /etc/passwd r,
 		    /proc/sys/net/core/somaxconn r,
 		    /sys/kernel/mm/transparent_hugepage/hpage_pmd_size r,
 		    /usr/bin/git mrix,
 		    /usr/local/bin/gitea mr,
+		    /usr/share/git-core/templates/ r,
 		    owner /etc/gitea/app.ini rw,
 		    owner /home/git/** rw,
 		    owner /proc/*/cpuset r,
 		    owner /var/lib/gitea/** rwlk,
+		  
 		  }
+		  
 		  ```
 		- And enforce AppArmor profile
 			- ```sh
