@@ -8,4 +8,14 @@
 	  adduser keycloak
 	  su keycloak
 	  ```
-- ### Create
+- ### Create folder structure and download Keycloak binaries
+	- ```
+	  cd && mkdir -m 700 prod && cd prod
+	  # Download Keycloak binary, you can download a newer Keycloak vewrsion changing it in all commands
+	  wget https://github.com/keycloak/keycloak/releases/download/26.2.1/keycloak-26.2.1.tar.gz
+	  tar -zxvf keycloak-26.2.1.tar.gz
+	  rm keycloak-26.2.1.tar.gz
+	  cp -a ./keycloak-26.2.1/. .
+	  rm -r keycloak-26.2.1/
+	  nano conf/keycloak.conf
+	  ```
