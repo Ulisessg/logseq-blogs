@@ -1,6 +1,6 @@
 public:: true
 
-- Mariadb is a open source database
+- Mariadb is a open source database, if you have problems installing mariadb try to stop nextcloud snap before install MariaDB
 - ## Install MariaDB
   id:: 680fb9ee-ad2e-4ca3-b0b0-e7f24c09f493
 	- Given Debian stable does not provide the latest versions of most software we must set the Mariadb source to download the proper version

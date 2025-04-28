@@ -1,0 +1,1 @@
+- Keycloak is an Oauth provider, you can use it to add social media login in your apps, or use their own
