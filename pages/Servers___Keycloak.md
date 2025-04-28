@@ -19,5 +19,24 @@
 	  rm -r keycloak-26.2.1/
 	  nano conf/keycloak.conf
 	  ```
+	- And paste
+	- ```.env
+	  # Basic settings for running in production. Change accordingly before deploying the server.
+	  # Database
+	  # The database vendor.
+	  db=mariadb
+	  # The username of the database user.
+	  db-username=keycloak
+	  # The password of the database user.
+	  db-password=
+	  # HTTP
+	  proxy=reencrypt
+	  # Do not attach route to cookies and rely on the session affinity capabilities from reverse proxy
+	  spi-sticky-session-encoder-infinispan-should-attach-route=false
+	  # Hostname for the Keycloak server.
+	  hostname=subdomain.domain.com
+	  
+	  ```
 - ### Configure Keycloak
-	- ``````
+	- ```sh
+	  ```
