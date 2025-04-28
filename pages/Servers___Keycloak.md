@@ -146,4 +146,11 @@
 		  ```
 - ### Add Keycloak to traefik dynamic config
 	- ```yaml
+	  http:
+	    routers:
+	      keycloak:
+	        rule: "Host(`subdomain.domain.com`)"
+	        service: keycloak-service
+	        tls:
+	        	
 	  ```
