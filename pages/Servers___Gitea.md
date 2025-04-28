@@ -14,4 +14,4 @@ public:: true
 	  GRANT ALL PRIVILEGES ON giteadb.* TO 'gitea';
 	  FLUSH PRIVILEGES;
 	  ```
-	- Since MariaDB
+	- Since MariaDB 11.4 TLS is activaded by de
