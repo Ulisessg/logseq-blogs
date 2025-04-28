@@ -2,7 +2,8 @@
 - ### Installing keycloak
 - {{embed ((680be69d-c4f1-4a6d-883d-a9bd3e4e03d3))}}
 - {{embed ((680be6fa-1991-42aa-a9e9-e04da6b0b7f6))}}
--
+- {{embed ((680fb9ee-ad2e-4ca3-b0b0-e7f24c09f493))}}
+- {{embed ((680fb9f4-57c3-436d-b4b2-16b2a6d03c52))}}
 - ### Create MariaDB user and database
 	- ```sh
 	  mysql -u root
