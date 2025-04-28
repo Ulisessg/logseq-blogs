@@ -8,7 +8,10 @@ public:: true
 	  ```
 - ### Create gitea user
 	- ```sh
+	  CREATE DATABASE giteadb CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_bin';
 	  SET old_passwords=0;
-	  CREATE USER 'gitea'@'%' IDENTIFIED BY 'gitea';
+	  CREATE USER 'gitea'@'%' IDENTIFIED BY 'gitea' REQUIRE SSL;
+	  GRANT ALL PRIVILEGES ON giteadb.* TO 'gitea';
+	  FLUSH PRIVILEGES;
 	  ```
 	-
