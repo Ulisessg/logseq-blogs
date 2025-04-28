@@ -26,4 +26,7 @@
 	  Signed-By: /etc/apt/keyrings/mariadb-keyring.pgp
 	  ```
 	- ### Install mariadb
-	-
+	- ```sh
+	  sudo apt-get update
+	  sudo apt-get install mariadb-server
+	  ```
