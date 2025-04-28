@@ -1,1 +1,3 @@
 - Mariadb is a open source database
+- ## Install Mariadb
+	- Given Debian stable does not provide the latest versions of most software
