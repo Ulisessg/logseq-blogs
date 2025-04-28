@@ -16,9 +16,10 @@ public:: true
 	  FLUSH PRIVILEGES;
 	  ```
 	- Since MariaDB 11.4 TLS is activaded by default using a random self generated TLS, you can specify your TLS following the official tutorial https://mariadb.com/kb/en/securing-connections-for-client-and-server/
-- ### Download and install binary
-	- Download amd64 binary
+- ### Download amd64 binary
 	- ```sh
 	  wget -O gitea https://dl.gitea.com/gitea/1.23.7/gitea-1.23.7-linux-amd64
 	  chmod +x gitea
 	  ```
+- ### Verify git is installed
+-
