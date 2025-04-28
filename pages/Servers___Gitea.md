@@ -52,9 +52,11 @@ public:: true
 	  ```
 - ### Create Gitea Linux service
 	- https://docs.gitea.com/installation/linux-service
-	- Ce
+	- Create service file `/etc/systemd/system/gitea.service`
 	- ```sh
-	  touch
+	  touch /etc/systemd/system/gitea.service
+	  nano /etc/systemd/system/gitea.service
+	  systemctl daemon-reload
 	  ```
 	- And paste
 	- ```
@@ -81,3 +83,4 @@ public:: true
 	  [Install]
 	  WantedBy=multi-user.target
 	  ```
+	-
