@@ -52,5 +52,32 @@ public:: true
 	  ```
 - ### Create Gitea Linux service
 	- https://docs.gitea.com/installation/linux-service
+	- Ce
 	- ```sh
+	  touch
+	  ```
+	- And paste
+	- ```
+	  [Unit]
+	  Description=Gitea (Git with a cup of tea)
+	  After=network.target
+	  Wants=mariadb.service
+	  After=mariadb.service
+	  
+	  [Service]
+	  # Uncomment the next line if you have repos with lots of files and get a HTTP 500 error because of that
+	  # LimitNOFILE=524288:524288
+	  RestartSec=2s
+	  Type=simple
+	  User=git
+	  Group=git
+	  WorkingDirectory=/var/lib/gitea/
+	  # If using Unix socket: tells systemd to create the /run/gitea folder, which will contain the gitea.sock file
+	  # (manually creating /run/gitea doesn't work, because it would not persist across reboots)
+	  #RuntimeDirectory=gitea
+	  ExecStart=/usr/local/bin/gitea web --config /etc/gitea/app.ini
+	  Restart=always
+	  Environment=USER=git HOME=/home/git GITEA_WORK_DIR=/var/lib/gitea
+	  [Install]
+	  WantedBy=multi-user.target
 	  ```
