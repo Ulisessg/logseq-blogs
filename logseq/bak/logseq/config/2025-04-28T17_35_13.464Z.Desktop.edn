@@ -420,4 +420,4 @@
  ;;      ;use Percent-encoding for other invalid characters
  :file/name-format :triple-lowbar
  :journal/page-title-format "dd-MM-yyyy"
- :publishing/all-pages-public? false}
+ :publishing/all-pages-public? true}
