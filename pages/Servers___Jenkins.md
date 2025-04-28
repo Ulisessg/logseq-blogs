@@ -17,6 +17,7 @@
 		- ```service
 		  [Service]
 		  Environment="JENKINS_PORT=8081"
+		  OtherEnv=""
 		  ```
 		- ```bash
 		  systemctl stop jenkins && systemctl start jenkins
