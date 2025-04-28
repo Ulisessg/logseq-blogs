@@ -74,7 +74,7 @@
 	  [Service]
 	  Type=notify
 	  User=keycloak
-	  ExecStart=/home/keycloak/prod/bin/kc.sh start --optimized --http-enabled true --proxy-headers xforwarded
+	  ExecStart=/home/keycloak/prod/bin/kc.sh start --optimized --http-enabled true --proxy-headers xforwarded --http-port=8180
 	  [Install]
 	  WantedBy=multi-user.target
 	  ```
