@@ -111,8 +111,9 @@ public:: true
 			    owner /var/lib/gitea/** rwlk,
 			  }
 			  ```
-			- And enable AppArmor profile
-				- ```sj
+			- And enforce AppArmor profile
+				- ```sh
+				  aa-enforce /etc/apparmor.d/usr.local.bin.gitea
 				  ```
 	- Enable and start Gitea Service
 		- ```sh
