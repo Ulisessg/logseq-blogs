@@ -83,8 +83,13 @@ public:: true
 	  [Install]
 	  WantedBy=multi-user.target
 	  ```
-	-
-		- Add this in `/etc/apparmor.d/usr.local.bin.gitea`
+	- Create AppArmor Gitea profile
+		- Create profile `/etc/apparmor.d/usr.local.bin.gitea`
+			- ```sh
+			  touch /etc/apparmor.d/usr.local.bin.gitea
+			  nano /etc/apparmor.d/usr.local.bin.gitea
+			  ```
+			- And paste
 			- ```apparmor
 			  abi <abi/3.0>,
 			  
