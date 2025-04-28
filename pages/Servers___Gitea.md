@@ -136,4 +136,8 @@ public:: true
 	            - url: http://127.0.0.1:3000
 	  ```
 - ### Fill the Gitea installation form
--
+- ### Now change the permissions of config files to only allow git UNIX user to modyfy
+	- ```sh
+	  chmod 750 /etc/gitea
+	  chmod 640 /etc/gitea/app.ini
+	  ```
