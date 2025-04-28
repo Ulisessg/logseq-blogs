@@ -98,6 +98,7 @@ public:: true
 		  /usr/local/bin/gitea {
 		    include <abstractions/apache2-common>
 		    include <abstractions/base>
+		    include <abstractions/consoles>
 		    include <abstractions/dbus-session-strict>
 		    include <abstractions/gio-open>
 		  
@@ -105,15 +106,23 @@ public:: true
 		    /etc/passwd r,
 		    /proc/sys/net/core/somaxconn r,
 		    /sys/kernel/mm/transparent_hugepage/hpage_pmd_size r,
+		    /usr/bin/basename mrix,
+		    /usr/bin/bash mrix,
+		    /usr/bin/cat mrix,
+		    /usr/bin/env ix,
 		    /usr/bin/git mrix,
+		    /usr/lib/git-core/git mrix,
 		    /usr/local/bin/gitea mr,
+		    /usr/local/bin/gitea mrix,
 		    /usr/share/git-core/templates/ r,
+		    /var/lib/gitea/** mrix,
 		    owner /etc/gitea/app.ini rw,
 		    owner /home/git/** rw,
 		    owner /proc/*/cpuset r,
 		    owner /var/lib/gitea/** rwlk,
 		  
 		  }
+		  
 		  
 		  ```
 		- And enforce AppArmor profile
