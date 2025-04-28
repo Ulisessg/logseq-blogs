@@ -130,5 +130,8 @@ public:: true
 	        entryPoints:
 	          - websecure
 	    services:
-	      
+	      gitea-service:
+	        loadBalancer:
+	          servers:
+	            - url: http://127.0.0.1:3000
 	  ```
