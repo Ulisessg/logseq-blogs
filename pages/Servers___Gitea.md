@@ -14,4 +14,4 @@ public:: true
 	  GRANT ALL PRIVILEGES ON giteadb.* TO 'gitea';
 	  FLUSH PRIVILEGES;
 	  ```
-	-
+	- Since MariaDB
