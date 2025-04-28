@@ -84,3 +84,29 @@ public:: true
 	  WantedBy=multi-user.target
 	  ```
 	-
+		- Add this in `/etc/apparmor.d/usr.local.bin.gitea`
+			- ```apparmor
+			  abi <abi/3.0>,
+			  
+			  include <tunables/global>
+			  
+			  /usr/local/bin/gitea {
+			    include <abstractions/apache2-common>
+			    include <abstractions/base>
+			    include <abstractions/dbus-session-strict>
+			  
+			    /etc/passwd r,
+			    /proc/sys/net/core/somaxconn r,
+			    /sys/kernel/mm/transparent_hugepage/hpage_pmd_size r,
+			    /usr/bin/git mrix,
+			    /usr/local/bin/gitea mr,
+			    owner /etc/gitea/app.ini rw,
+			    owner /home/git/** rw,
+			    owner /proc/*/cpuset r,
+			    owner /var/lib/gitea/** rwlk,
+			  }
+			  ```
+	- Enable and start Gitea Service
+		- ```sh
+		  sudo systemctl enable gitea --now
+		  ```
