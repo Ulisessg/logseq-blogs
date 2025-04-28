@@ -155,9 +155,9 @@
 	        	certResolver: myresolver
 	        entrypoints:
 	        	- websecure
-	      services:
-	        keycloak-service:
-	          loadBalancer:
-	            servers:
-	              - url: "http://127.0.0.1:8180"
+	    services:
+	      keycloak-service:
+	        loadBalancer:
+	          servers:
+	            - url: "http://127.0.0.1:8180"
 	  ```
