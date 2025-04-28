@@ -60,3 +60,85 @@
 	  # Build the production ready keycloak, improves startup time
 	  bin/kc.sh build
 	  ```
+- ### Create keycloak service
+	- logseq.order-list-type:: number
+	  ```bash
+	  touch /etc/systemd/system/keycloak.service
+	  nano /etc/systemd/system/keycloak.service
+	  
+	  ```
+	- logseq.order-list-type:: number
+	  ```service
+	  [Unit]
+	  Description=Identity and session manager
+	  After=syslog.target network.target
+	  [Service]
+	  Type=notify
+	  User=keycloak
+	  ExecStart=/home/keycloak/prod/bin/kc.sh start --optimized --http-enabled true --proxy-headers xforwarded
+	  [Install]
+	  WantedBy=multi-user.target
+	  ```
+- ### Create AppArmor profile
+	- logseq.order-list-type:: number
+	  ```bash
+	  touch /etc/apparmor.d/home.keycloak.prod.bin.kc.sh
+	  nano /etc/apparmor.d/home.keycloak.prod.bin.kc.sh
+	  ```
+	- logseq.order-list-type:: number
+	  ```service
+	  abi <abi/3.0>,
+	  
+	  include <tunables/global>
+	  
+	  /home/keycloak/prod/bin/kc.sh {
+	    include <abstractions/apache2-common>
+	    include <abstractions/base>
+	    include <abstractions/bash>
+	    include <abstractions/dbus-session-strict>
+	    include <abstractions/opencl-pocl>
+	    include <abstractions/user-tmp>
+	  
+	    capability dac_override,
+	    capability dac_read_search,
+	  
+	    /etc/nsswitch.conf r,
+	    /etc/passwd r,
+	    /etc/timezone r,
+	    /home/keycloak/prod/bin/kc.sh r,
+	    /proc/*/net/if_inet6 r,
+	    /proc/cgroups r,
+	    /proc/sys/net/core/somaxconn r,
+	    /sys/devices/system/cpu/cpu0/microcode/version r,
+	    /sys/fs/cgroup/system.slice/keycloak.service/memory.max r,
+	    /sys/fs/cgroup/user.slice/user-0.slice/session-c3.scope/cpu.max r,
+	    /sys/fs/cgroup/user.slice/user-0.slice/session-c3.scope/memory.max r,
+	    /sys/kernel/mm/hugepages/ r,
+	    /sys/kernel/mm/transparent_hugepage/enabled r,
+	    /sys/kernel/mm/transparent_hugepage/hpage_pmd_size r,
+	    /usr/bin/dash ix,
+	    /usr/bin/dirname mrix,
+	    /usr/bin/printf mrix,
+	    /usr/bin/readlink mrix,
+	    /usr/bin/sed mrix,
+	    /usr/bin/uname mrix,
+	    /usr/bin/xargs mrix,
+	    /usr/lib/jvm/temurin-21-jre-amd64/bin/java mrix,
+	    owner /home/** r,
+	    owner /home/** w,
+	    owner /proc/*/cgroup r,
+	    owner /proc/*/cmdline r,
+	    owner /proc/*/coredump_filter rw,
+	    owner /proc/*/fd/ r,
+	    owner /proc/*/mountinfo r,
+	    owner /proc/*/stat r,
+	  }
+	  
+	  ```
+		- logseq.order-list-type:: number
+	- Active profile
+	  logseq.order-list-type:: number
+		- logseq.order-list-type:: number
+		  ```bash
+		  aa-enfoce /etc/apparmor.d/home.keycloak.prod.bin.kc.sh
+		  ```
