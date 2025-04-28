@@ -6,7 +6,7 @@ public:: true
 	- ```sh
 	  mysql -u root
 	  ```
-- ### Create gitea user
+- ### Create gitea user in MariaDB
 	- https://docs.gitea.com/installation/database-prep
 	- ```sh
 	  CREATE DATABASE giteadb CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_bin';
@@ -16,4 +16,6 @@ public:: true
 	  FLUSH PRIVILEGES;
 	  ```
 	- Since MariaDB 11.4 TLS is activaded by default using a random self generated TLS, you can specify your TLS following the official tutorial https://mariadb.com/kb/en/securing-connections-for-client-and-server/
+- ### Download and install binary
+	- Download amd64 binary
 	-
