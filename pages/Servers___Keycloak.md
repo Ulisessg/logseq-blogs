@@ -65,7 +65,6 @@
 	  ```bash
 	  touch /etc/systemd/system/keycloak.service
 	  nano /etc/systemd/system/keycloak.service
-	  
 	  ```
 	- logseq.order-list-type:: number
 	  ```service
@@ -140,5 +139,5 @@
 	  logseq.order-list-type:: number
 		- logseq.order-list-type:: number
 		  ```bash
-		  aa-enfoce /etc/apparmor.d/home.keycloak.prod.bin.kc.sh
+		  aa-enforce /etc/apparmor.d/home.keycloak.prod.bin.kc.sh
 		  ```
