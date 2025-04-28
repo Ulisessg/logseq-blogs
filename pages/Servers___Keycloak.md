@@ -34,9 +34,12 @@
 	  # Do not attach route to cookies and rely on the session affinity capabilities from reverse proxy
 	  spi-sticky-session-encoder-infinispan-should-attach-route=false
 	  # Hostname for the Keycloak server.
-	  hostname=subdomain.domain.com
-	  
+	  hostname=auth.anhomelab.online
 	  ```
-- ### Configure Keycloak
+- ### Prepare Keycloak for production
 	- ```sh
+	  # This will create a temporal admin user, will prompt you to write the username and temp password
+	  bin/kc.sh bootstrap-admin user
+	  # Build the production ready keycloak, improves startup time
+	  bin/kc.sh build
 	  ```
