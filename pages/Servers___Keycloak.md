@@ -152,5 +152,11 @@
 	        rule: "Host(`subdomain.domain.com`)"
 	        service: keycloak-service
 	        tls:
-	        	
+	        	certResolver: myresolver
+	        entrypoints:
+	        	- websecure
+	      services:
+	        keycloak-service:
+	          loadBalancer:
+	            
 	  ```
