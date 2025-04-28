@@ -46,4 +46,11 @@ public:: true
 	  chown root:git /etc/gitea
 	  chmod 770 /etc/gitea
 	  ```
-- ### Copy Gitea to
+- ### Copy Gitea to global binary location
+	- ```sh
+	  cp gitea /usr/local/bin/gitea
+	  ```
+- ### Create Gitea Linux service
+	- https://docs.gitea.com/installation/linux-service
+	- ```sh
+	  ```
