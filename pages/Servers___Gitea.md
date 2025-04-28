@@ -119,7 +119,7 @@ public:: true
 	- ```sh
 	  sudo systemctl enable gitea --now
 	  ```
-- Add Gitea to Traefik config
+- Add Gitea to Traefik dynamic config `/etc/traefik/dynamic.yaml`
 	- ```yaml
 	    routers:
 	      gitea:
