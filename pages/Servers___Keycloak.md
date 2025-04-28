@@ -1,1 +1,4 @@
-- Keycloak is an Oauth provider, you can use it to add social media login in your apps, or use their own
+- Keycloak is an Oauth provider, you can use it to add social media login in your apps, or use their own login service
+- ### Installing keycloak
+- logseq://graph/Computers?page=Servers%2FTools%2FJava%2021
+-
