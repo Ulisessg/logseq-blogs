@@ -111,6 +111,9 @@ public:: true
 			    owner /var/lib/gitea/** rwlk,
 			  }
 			  ```
+			- And enable AppArmor profile
+				- ```sj
+				  ```
 	- Enable and start Gitea Service
 		- ```sh
 		  sudo systemctl enable gitea --now
