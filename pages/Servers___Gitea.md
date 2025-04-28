@@ -120,4 +120,13 @@ public:: true
 	  sudo systemctl enable gitea --now
 	  ```
 - Add Gitea to Traefik config
-	-
+	- ```yaml
+	    routers:
+	      gitea:
+	        rule: "Host(`sub.domain.com`)"
+	        service: gitea-service
+	        tls:
+	          certResolver: myresolver
+	        entryPoints:
+	          - websecure
+	  ```
