@@ -22,4 +22,18 @@ public:: true
 	  chmod +x gitea
 	  ```
 - ### Verify git is installed
--
+	- ```sh
+	  git --version
+	  ```
+- ### Create Gitea UNIX user
+	- You can name it as you want
+	- ```sh
+	  adduser \
+	     --system \
+	     --shell /bin/bash \
+	     --gecos 'Git Version Control' \
+	     --group \
+	     --disabled-password \
+	     --home /home/git \
+	     git
+	  ```
