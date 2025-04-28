@@ -83,39 +83,41 @@ public:: true
 	  [Install]
 	  WantedBy=multi-user.target
 	  ```
-	- Create AppArmor Gitea profile
-		- Create profile `/etc/apparmor.d/usr.local.bin.gitea`
-			- ```sh
-			  touch /etc/apparmor.d/usr.local.bin.gitea
-			  nano /etc/apparmor.d/usr.local.bin.gitea
-			  ```
-			- And paste
-			- ```apparmor
-			  abi <abi/3.0>,
-			  
-			  include <tunables/global>
-			  
-			  /usr/local/bin/gitea {
-			    include <abstractions/apache2-common>
-			    include <abstractions/base>
-			    include <abstractions/dbus-session-strict>
-			  
-			    /etc/passwd r,
-			    /proc/sys/net/core/somaxconn r,
-			    /sys/kernel/mm/transparent_hugepage/hpage_pmd_size r,
-			    /usr/bin/git mrix,
-			    /usr/local/bin/gitea mr,
-			    owner /etc/gitea/app.ini rw,
-			    owner /home/git/** rw,
-			    owner /proc/*/cpuset r,
-			    owner /var/lib/gitea/** rwlk,
-			  }
-			  ```
-			- And enforce AppArmor profile
-				- ```sh
-				  aa-enforce /etc/apparmor.d/usr.local.bin.gitea
-				  ```
-	- Enable and start Gitea Service
+- ### Create AppArmor Gitea profile
+	- Create profile `/etc/apparmor.d/usr.local.bin.gitea`
 		- ```sh
-		  sudo systemctl enable gitea --now
+		  touch /etc/apparmor.d/usr.local.bin.gitea
+		  nano /etc/apparmor.d/usr.local.bin.gitea
 		  ```
+		- And paste
+		- ```apparmor
+		  abi <abi/3.0>,
+		  
+		  include <tunables/global>
+		  
+		  /usr/local/bin/gitea {
+		    include <abstractions/apache2-common>
+		    include <abstractions/base>
+		    include <abstractions/dbus-session-strict>
+		  
+		    /etc/passwd r,
+		    /proc/sys/net/core/somaxconn r,
+		    /sys/kernel/mm/transparent_hugepage/hpage_pmd_size r,
+		    /usr/bin/git mrix,
+		    /usr/local/bin/gitea mr,
+		    owner /etc/gitea/app.ini rw,
+		    owner /home/git/** rw,
+		    owner /proc/*/cpuset r,
+		    owner /var/lib/gitea/** rwlk,
+		  }
+		  ```
+		- And enforce AppArmor profile
+			- ```sh
+			  aa-enforce /etc/apparmor.d/usr.local.bin.gitea
+			  ```
+- ### Enable and start Gitea Service
+	- ```sh
+	  sudo systemctl enable gitea --now
+	  ```
+- Add Gitea to Traefik config
+	-
