@@ -74,6 +74,9 @@
 	  [Service]
 	  Type=notify
 	  User=keycloak
+	  RestartSec=2s
+	  Type=simple
+	  WorkingDirectory=/home/keycloak/prod/bin/
 	  ExecStart=/home/keycloak/prod/bin/kc.sh start --optimized --http-enabled true --proxy-headers xforwarded --http-port=8180
 	  [Install]
 	  WantedBy=multi-user.target
@@ -141,3 +144,6 @@
 		  ```bash
 		  aa-enforce /etc/apparmor.d/home.keycloak.prod.bin.kc.sh
 		  ```
+- ### Add Keycloak to traefik dynamic config
+	- ```yaml
+	  ```
