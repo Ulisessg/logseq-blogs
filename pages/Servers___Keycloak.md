@@ -19,3 +19,5 @@
 	  rm -r keycloak-26.2.1/
 	  nano conf/keycloak.conf
 	  ```
+- ### Configure Keycloak
+	- ``````
